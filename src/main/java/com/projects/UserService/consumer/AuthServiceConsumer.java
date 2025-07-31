@@ -20,7 +20,7 @@ public class AuthServiceConsumer
     @Autowired
     private ObjectMapper objectMapper;
 
-    @KafkaListener(topics = "${spring.kafka.topic-json.name}", groupId = "${spring.kafka.consumer.group-id}")
+    //@KafkaListener(topics = "${spring.kafka.topic-json.name}", groupId = "${spring.kafka.consumer.group-id}")
     public void listen(UserInfoDto eventData) {
         try{
             // Todo: Make it transactional, to handle idempotency and validate email, phoneNumber etc
