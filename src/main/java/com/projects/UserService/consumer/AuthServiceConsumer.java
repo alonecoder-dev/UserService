@@ -25,9 +25,9 @@ public class AuthServiceConsumer
         try{
             // Todo: Make it transactional, to handle idempotency and validate email, phoneNumber etc
             userService.createOrUpdateUser(eventData);
-        }catch(Exception ex){
-            ex.printStackTrace();
-            System.out.println("AuthServiceConsumer: Exception is thrown while consuming kafka event");
+        } catch(Exception ex){
+        System.err.println("!!!!!!!! KAFKA CONSUMER FAILED TO PROCESS MESSAGE !!!!!!!");
+        ex.printStackTrace(System.err);
         }
     }
 
